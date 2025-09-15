@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SIP over WebRTC Test Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./jssip.min.js"></script><!-- https://cdn.jsdelivr.net/npm/jssip@3/dist/jssip.min.js -->
+    <script src="main.js" type="module"></script>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+<div class="top">
+    <!-- Top-left: control panel -->
+    <div class="panel" id="controlPanel">
+        <h2>SIP over WebRTC</h2>
+
+        <div class="row">
+            <label for="wsUri">WebSocket URL</label>
+            <input id="wsUri" type="text" placeholder="e.g., wss://pbx.example.com:7443/ws" />
+        </div>
+        <div class="row">
+            <label for="sipUri">SIP URI (username)</label>
+            <input id="sipUri" type="text" placeholder="e.g., 1001@example.com or sip:1001@example.com" />
+        </div>
+        <div class="row">
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="SIP account password" />
+        </div>
+        <div class="row">
+            <label for="callee">Callee</label>
+            <input id="callee" type="text" placeholder="e.g., 1002 or 1002@example.com or sip:1002@example.com" />
+        </div>
+
+        <div class="buttons">
+            <button id="btnRegister" type="button">Register</button>
+            <button id="btnUnregister" type="button" disabled>Unregister</button>
+            <button id="btnCall" type="button" disabled>Call</button>
+            <button id="btnAnswer" type="button" disabled>Answer</button>
+            <button id="btnHangup" type="button" disabled>Hangup</button>
+        </div>
+
+        <div class="status">
+            <div>User Agent:</div><div><span id="uaStatus">idle</span></div>
+            <div>Session:</div><div><span id="callStatus">idle</span></div>
+        </div>
+    </div>
+
+    <!-- Top-right: spectrum -->
+    <div class="canvas-wrap">
+        <h2>Remote Audio Spectrum</h2>
+        <canvas id="spectrum" width="1200" height="360"></canvas>
+    </div>
+</div>
+
+<!-- Hidden muted audio element to start remote playback (autoplay-safe) -->
+<audio id="remoteAudio" muted playsinline></audio>
+
+<h3>Logs</h3>
+<div id="log"></div>
+</body>
+</html>

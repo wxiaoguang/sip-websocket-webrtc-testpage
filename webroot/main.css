@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    padding: 16px;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: minmax(300px, 460px) 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    .top {
+        grid-template-columns: 1fr;
+    }
+}
+
+.panel {
+    border: 1px solid #9995;
+    border-radius: 8px;
+    padding: 12px;
+    background: #0001;
+    height: 100%;
+}
+
+.panel h2 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+label {
+    min-width: 160px;
+}
+
+input[type="text"],
+input[type="password"] {
+    flex: 1 1 240px;
+    max-width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #9997;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid #9997;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.status {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.canvas-wrap {
+    border: 1px solid #9995;
+    border-radius: 8px;
+    padding: 12px;
+    background: #0001;
+}
+
+.canvas-wrap h2 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+#spectrum {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 1px solid #9995;
+    border-radius: 6px;
+    background: #0001;
+}
+
+h3 {
+    margin: 16px 0 8px;
+}
+
+#log {
+    white-space: pre-wrap;
+    word-break: break-word;
+    background: #0000000d;
+    border-radius: 6px;
+    padding: 10px;
+    height: 220px;
+    overflow: auto;
+    border: 1px solid #9995;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 12px;
+}
