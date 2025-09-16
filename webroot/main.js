@@ -304,8 +304,8 @@ function attachUAHandlers(uaInstance) {
         // Basic session lifecycle
         session.on('connecting', () => { log('Session connecting...'); });
         session.on('progress', () => { setCallStatus('progress / early media'); log('Session progress (180/183)'); updateUI(); });
-        session.on('accepted', () => { setCallStatus('accepted'); sessionEstablished = true; log('Session accepted', session.connection); updateUI(); });
-        session.on('confirmed', () => { setCallStatus('in-call'); sessionEstablished = true; log('Session confirmed (DTLS established)', session.connection); updateUI(); });
+        session.on('accepted', () => { setCallStatus('accepted'); sessionEstablished = true; log('Session accepted'); updateUI(); });
+        session.on('confirmed', () => { setCallStatus('in-call'); sessionEstablished = true; log('Session confirmed (DTLS established)'); updateUI(); });
         session.on('ended', (data) => {
             setCallStatus('ended');
             log('Session ended:', (data && data.cause) || '');
